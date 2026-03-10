@@ -1,0 +1,68 @@
+:root{
+  --olive: #4B6043;
+  --olive-dark: #32422E;
+  --beige: #E8DCCA;
+  --white: #FFFFFF;
+  --muted: #6B6B6B;
+}
+
+*{box-sizing: border-box; margin:0; padding:0}
+body{
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--beige);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.card{
+  width: 380px;
+  background: var(--white);
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  text-align: center;
+  animation: fadeIn .45s ease;
+}
+
+.brand{ font-size:42px; color:var(--olive); margin-bottom:6px; }
+h2{ color:var(--olive); margin:0 0 18px 0; font-weight:600; }
+
+.toggle{ display:flex; gap:8px; justify-content:center; margin-bottom:16px; }
+.toggle button{
+  background:transparent; border:none; padding:8px 12px; border-radius:999px;
+  cursor:pointer; color:var(--muted); font-weight:600; transition: all .18s;
+}
+.toggle button.active{
+  background: linear-gradient(180deg, rgba(75,96,67,0.12), rgba(75,96,67,0.06));
+  color:var(--olive);
+  box-shadow: inset 0 -2px 0 rgba(50,66,46,0.08);
+}
+
+form{ text-align:left; }
+.field{ margin-bottom:10px; }
+label{ display:block; font-size:13px; color:var(--muted); margin-bottom:6px; }
+input, select {
+  width:100%; padding:11px 12px; border-radius:10px;
+  border:1.2px solid rgba(75,96,67,0.18); font-size:14px; outline:none; background:#fff;
+}
+input:focus{ border-color:var(--olive-dark); box-shadow:0 6px 18px rgba(50,66,46,0.06); }
+
+.btn{ width:100%; padding:12px; border-radius:10px; border:none; font-weight:700; cursor:pointer; font-size:15px; margin-top:8px; }
+.btn-primary{ background:var(--olive); color:var(--white); }
+.btn-primary:hover{ background:var(--olive-dark); transform:translateY(-2px); }
+
+.small{ font-size:13px; color:var(--muted); text-align:center; margin-top:12px; }
+.link{ color:var(--olive); text-decoration:none; font-weight:600; }
+
+.form-hidden{ display:none; opacity:0; transform: translateY(6px); transition: all .25s ease; }
+.form-visible{ display:block; opacity:1; transform: translateY(0); transition: all .25s ease; }
+
+@media(max-width:420px){ .card{ width:92%; padding:22px } }
+
+@keyframes fadeIn { from{opacity:0; transform:translateY(12px)} to{opacity:1; transform:none} }
+
+.msg { margin-top:10px; font-size:13px; color: #b33; display:none; text-align:center; }
+.msg.ok { color: #2a8; display:none; }

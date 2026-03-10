@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Registro - Básicos Express</title>
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+  <div class="card" role="main" aria-labelledby="title">
+    <div class="brand" aria-hidden="true">🐾</div>
+    <h2 id="title">Iniciar Sesión</h2>
+
+    <div class="toggle" role="tablist" aria-label="Seleccionar formulario">
+      <button id="btn-login" class="active" type="button" role="tab" aria-selected="true">Iniciar sesión</button>
+      <button id="btn-register" type="button" role="tab" aria-selected="false">Registrarse</button>
+    </div>
+
+    <!-- LOGIN -->
+    <form id="form-login" class="form-visible" autocomplete="on" novalidate>
+      <div class="field">
+        <label for="login-user">Correo</label>
+        <input id="login-user" name="login-user" type="email" placeholder="ej: camilo@correo.com" required>
+      </div>
+
+      <div class="field">
+        <label for="login-pass">Contraseña</label>
+        <input id="login-pass" name="login-pass" type="password" placeholder="********" required>
+      </div>
+
+      <button class="btn btn-primary" type="submit">Iniciar Sesión</button>
+
+      <div class="small">
+        ¿No tienes cuenta? <a href="#" id="to-register" class="link">Regístrate</a>
+      </div>
+      <div id="login-msg" class="msg"></div>
+    </form>
+
+    <!-- REGISTER -->
+    <form id="form-register" class="form-hidden" autocomplete="on" novalidate>
+      <div class="field">
+        <label for="reg-nombres">Nombres</label>
+        <input id="reg-nombres" name="reg-nombres" type="text" placeholder="Juan Carlos" required>
+      </div>
+
+      <div class="field">
+        <label for="reg-apellidos">Apellidos</label>
+        <input id="reg-apellidos" name="reg-apellidos" type="text" placeholder="Pérez Gómez" required>
+      </div>
+
+      <div class="field">
+        <label for="reg-email">Correo</label>
+        <input id="reg-email" name="reg-email" type="email" placeholder="tucorreo@ej.com" required>
+      </div>
+
+      <div class="field">
+        <label for="reg-pass">Contraseña</label>
+        <input id="reg-pass" name="reg-pass" type="password" placeholder="Mínimo 6 caracteres" minlength="6" required>
+      </div>
+
+      <button class="btn btn-primary" type="submit">Crear cuenta</button>
+
+      <div class="small">
+        Ya tienes cuenta? <a href="#" id="to-login" class="link">Inicia sesión</a>
+      </div>
+      <div id="reg-msg" class="msg"></div>
+    </form>
+
+  </div>
+
+  <script src="jss/login.js"></script>
+</body>
+</html>
